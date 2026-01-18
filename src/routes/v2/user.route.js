@@ -9,3 +9,5 @@ router.get("/", authenticate, getUsers);
 
 //  ** SIGNUP **
 router.post("/", createUser);
+
+
