@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { createUser, getUsers } from "../../modules/users/users.controller.js";
 import { authenticate } from "../../middlewares/middleware.js";
+import { updateUserProfile } from "../../modules/users/updateUserProfile.js";
 
 export const router = Router();
 
@@ -10,4 +11,5 @@ router.get("/", authenticate, getUsers);
 //  ** SIGNUP **
 router.post("/", createUser);
 
-
+//  ** UPDATE **
+router.patch("/:id", authenticate, updateUserProfile);
