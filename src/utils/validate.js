@@ -29,3 +29,16 @@ export const validateRegister = (data) => {
 
   return null; // ผ่าน validation
 };
+
+
+export const validateUpdateProfile = (data) => {
+  if (data.first_name && (data.first_name.length < 2 || data.first_name.length > 50)) {
+    return "First name must be 2-50 characters";
+  }
+
+  if (data.last_name && (data.last_name.length < 2 || data.last_name.length > 50)) {
+    return "Last name must be 2-50 characters";
+  }
+
+  return null;
+};
