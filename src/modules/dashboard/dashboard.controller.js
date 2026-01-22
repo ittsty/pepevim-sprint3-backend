@@ -8,12 +8,12 @@ import * as mockup from "../../mock-db/dashboard.js";
 export const getDashboardSummary = async (req, res) => {
   try {
     // 1. ตรวจสอบจำนวนออเดอร์ที่มีสถานะชำระเงินแล้ว
-    const orderCount = await Order.countDocuments({ 
-      status: { $in: ["paid", "shipped", "completed"] } 
-    });
+    // const orderCount = await Order.countDocuments({ 
+    //   status: { $in: ["paid", "shipped", "completed"] } 
+    // });
 
     // หากไม่มีข้อมูลเลย ให้ส่ง Mockup กลับไป
-    if (orderCount === 0) {
+    if (true) { // (orderCount === 0)
       return res.status(200).json({
         success: true,
         source: "mockup",
