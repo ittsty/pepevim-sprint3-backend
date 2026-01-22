@@ -1,6 +1,5 @@
 import express from "express";
-import { getDashboardSummary} from "../../modules/dashboard/dashboard.controller.js";
-
+import { getDashboardSummary } from "../../modules/dashboard/dashboard.controller.js";
 
 export const router = express.Router();
 
