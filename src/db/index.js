@@ -2,10 +2,14 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/pepevim-sprint3");
-    console.log("MongoDB connected");
+    const connectionInstance = await mongoose.connect(
+      `${process.env.MONGODB_URI}/pepevim-sprint3`
+    );
+    console.log(
+      `\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`
+    );
   } catch (error) {
-    console.error("MongoDB connection failed", error);
+    console.log("MONGODB connection FAILED ", error);
     process.exit(1);
   }
 };
